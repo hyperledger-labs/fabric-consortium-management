@@ -1,0 +1,103 @@
+<!-- 
+Copyright 2009-2019 SAP SE or an SAP affiliate company. All Rights Reserved.
+
+SPDX-License-Identifier: Apache-2.0
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Consortium Management</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+		integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="icon" type="image/png" href="/favicon.png" />
+</head>
+
+<body>
+	<nav class="navbar navbar-dark bg-dark" style="margin-bottom: 10px;">
+		<img src="/favicon.png" alt="" height="42" width="42">
+		<span class="navbar-brand mb-0 h1">Consortium Management Dashboard</span>
+		<span class="navbar-brand mb-0 h1" id="channelName"></span>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#proposeUpdateModal">
+			New Proposal
+		</button>
+	</nav>
+	<div class="container-fluid">
+		<nav>
+			<div class="nav nav-tabs" id="nav-tab" role="tablist">
+				<a class="nav-item nav-link" id="nav-joinreq-tab" data-toggle="tab" href="#nav-joinreq" role="tab"
+					aria-controls="nav-joinreq" aria-selected="true">Join Request</a>
+				<a class="nav-item nav-link active" id="nav-proposals-tab" data-toggle="tab" href="#nav-proposals"
+					role="tab" aria-controls="nav-proposals" aria-selected="false">Proposals</a>
+			</div>
+		</nav>
+		<div id="alert" class="alert alert-warning" role="alert"
+			style="display: none; position: absolute; z-index: 100; right: 25px; top: 65px; max-width: 90%;">
+			<button type="button" class="close" onclick="setAlert()">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<span id="alert-text"></span>
+		</div>
+		<div class="tab-content" id="nav-tabContent">
+			<div class="tab-pane fade" id="nav-joinreq" role="tabpanel" aria-labelledby="nav-joinreq-tab">
+
+			</div>
+			<div class="tab-pane fade show active" id="nav-proposals" role="tabpanel"
+				aria-labelledby="nav-proposals-tab">
+				<div class="row">
+					<div class="col">
+						<div id="accordion"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Propose Update Modal -->
+	<div class="modal fade" id="proposeUpdateModal" tabindex="-1" role="dialog"
+		aria-labelledby="proposeUpdateModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="proposeUpdateModalLabel">Propose Update</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="description">Description</label>
+						<input type="text" class="form-control" id="description" Description="emailHelp"
+							placeholder="Enter a description.">
+					</div>
+					<div class="form-group" id="upload-input">
+						<label for="upload">Upload your Proposal</label>
+						<input type="file" id="upload" name="upload" class="form-control-file">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" id="propose-update-button">Upload Proposal</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"
+		integrity="sha256-7/yoZS3548fXSRXqc/xYzjsmuW3sFKzuvOCHd06Pmps=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+		integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+		integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+		crossorigin="anonymous"></script>
+	<script src="index.js"></script>
+</body>
+
+</html>
